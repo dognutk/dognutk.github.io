@@ -21,27 +21,24 @@
     }
 
     function update() {
-      // x = window.scrollY / 10
+      x = window.scrollY / 10
       y = window.scrollY / 10
       z = window.scrollY / 10
       document.getElementById("box").style.transform = "rotateX(" + x + "deg)" +
                                                         "rotateY(" + y + "deg)" +
                                                         "rotateZ(" + z + "deg)"
-      // document.getElementById("box").style.transform="rotate3d(1, 1, 1, " + x + "deg)"
 
+      if (window.scrollY >= 1000) {
+        window.location.href = "https://www.youtube.com/watch?v=P-mAKwRj9mA"
+      }
 
     }
 
-    // setInterval(() => {rotZ(); rotY(); rotX()}, 100)
     setInterval(() => {update()}, 1)
   </script>
 
   <style>
     body {
-      /* flex-direction: column; */
-      /* text-align: center; */
-      /* align-items: center; */
-      /* justify-content: center; */
       margin: auto;
       height: 1000000000px;
       /* width: 50%; */
@@ -50,8 +47,6 @@
 
     #frame {
       display: flex;
-      /* perspective: 800px; */
-      /* perspective-origin: 150% 150%; */
       margin: 300px;
       position: fixed;
     }
@@ -59,7 +54,6 @@
     #box {
       width: 300px;
       height: 300px;
-      /* perspective: 550px; */
       transform-style: preserve-3d;
     }
 
@@ -74,7 +68,6 @@
 
     .front {
       background-color: rgba(128, 0, 128, 0.5);
-      /* translate by 300 * 0.5 * sqrt(3) */
       transform: scaleX(2) translateZ(175px);
     }
 
@@ -82,11 +75,6 @@
       background-color: rgba(0, 128, 128, 0.5);
       transform: rotateY(-120deg) scaleX(2) translateZ(175px);
     }
-/*
-    .back {
-      background-color: rgba(0, 0, 255, 0.5);
-      transform: rotateY(180deg) translateZ(150px);
-    } */
 
     .right {
       background-color: rgba(128, 128, 0, 0.5);
@@ -95,17 +83,11 @@
   </style>
 </head>
 <body>
-  <!-- <button onclick="rotX()">x</button>
-  <button onclick="rotY()">y</button>
-  <button onclick="rotZ()">z</button> -->
   <section id="frame">
     <div id="box">
       <img class="face front" src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/105617177_3044636038983351_3570368854280715590_o.jpg?_nc_cat=102&ccb=2&_nc_sid=09cbfe&_nc_ohc=ejkBFBFuNpAAX9QU9EO&_nc_ht=scontent-sjc3-1.xx&oh=3c502a4bfa364db912d48e7b4a867673&oe=5FD1619B">
       <img class="face left" src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/105617177_3044636038983351_3570368854280715590_o.jpg?_nc_cat=102&ccb=2&_nc_sid=09cbfe&_nc_ohc=ejkBFBFuNpAAX9QU9EO&_nc_ht=scontent-sjc3-1.xx&oh=3c502a4bfa364db912d48e7b4a867673&oe=5FD1619B">
       <img class="face right" src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/105617177_3044636038983351_3570368854280715590_o.jpg?_nc_cat=102&ccb=2&_nc_sid=09cbfe&_nc_ohc=ejkBFBFuNpAAX9QU9EO&_nc_ht=scontent-sjc3-1.xx&oh=3c502a4bfa364db912d48e7b4a867673&oe=5FD1619B">
-      <!-- <p class="face front">1</p>
-      <p class="face left">1</p>
-      <p class="face right">1</p> -->
     </div>
   </section>
 
